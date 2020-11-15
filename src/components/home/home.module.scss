@@ -1,0 +1,32 @@
+.card_container {
+  width: 400;
+  transition: all ease-in 2s !important;
+  &:hover {
+    & .add_to_card {
+      display: flex !important;
+      transition: display 1s ease-in !important;
+    }
+  }
+  & .add_to_card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+}
+.title_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 20px;
+  & .title_text {
+    color: #32325d;
+  }
+  & .title_line {
+    width: 100px;
+    border: 1px solid #32325d;
+    margin: 0px 20px;
+    height: 0px;
+  }
+}
