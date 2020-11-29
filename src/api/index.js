@@ -1,7 +1,7 @@
 import axios from "axios";
 const getAllStickers = async () => {
   const response = await axios.get(
-    "https://www.redbubble.com/typeahead/?term=cool&locale=en"
+    "http://localhost:3000/api/data"
   );
   const { data } = await response;
   return data;
