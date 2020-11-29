@@ -15,6 +15,7 @@ import StickerContainer from "./stickers-container.component";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectFade]);
 const HomeContent = () => {
   const category = useCategoryState();
+  console.log('content render','color:red;')
   return (
     <>
       <Row>
