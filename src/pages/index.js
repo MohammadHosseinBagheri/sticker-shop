@@ -19,8 +19,7 @@ export async function getServerSideProps() {
   const data = await useGetAllCategory();
   return {
     props: {
-      completions: data.completions,
-      data: data.data,
+      data: data,
     },
   };
 }
