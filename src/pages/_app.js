@@ -7,15 +7,17 @@ import "../styles/globals.css";
 
 import Header from "../components/header/header.component";
 import CategoryProvider from "../context/category/provider";
-
+import CardProvider from "../context/card/provider";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <CategoryProvider>
-        <Header />
-        <Component {...pageProps} />
-      </CategoryProvider>
+      <CardProvider>
+        <CategoryProvider>
+          <Header />
+          <Component {...pageProps} />
+        </CategoryProvider>
+      </CardProvider>
     </>
   );
 }
