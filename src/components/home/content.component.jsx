@@ -7,12 +7,13 @@ import SwiperCore, {
   Scrollbar,
   A11y,
   EffectFade,
+  Autoplay,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MySwiper from "./swiper.component";
 import StickerContainer from "./stickers-container.component";
 import styles from "./home.module.scss";
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectFade]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectFade,Autoplay]);
 const HomeContent = () => {
   const category = useCategoryState();
   console.log("content render", "color:red;");
