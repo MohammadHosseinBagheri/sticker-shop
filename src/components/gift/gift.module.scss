@@ -1,0 +1,14 @@
+$background-color: #f2e94e;
+$height: 100px;
+$color:#32325D;
+.gift_header_container {
+  background-color: $background-color;
+  text-align: center;
+  color: $color;
+  align-self: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  min-height: $height;
+}
