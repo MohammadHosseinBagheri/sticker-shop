@@ -9,6 +9,7 @@ import Header from "../components/header/header.component";
 import CategoryProvider from "../context/category/provider";
 import CardProvider from "../context/card/provider";
 import GiftHeader from "../components/gift/gift-header.component";
+import Footer from "../components/footer/footer.component";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </CategoryProvider>
       </CardProvider>
+      <Footer />
     </>
   );
 }
