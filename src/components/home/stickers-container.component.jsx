@@ -40,10 +40,10 @@ const StickerContainer = () => {
                     <FaShoppingBasket />
                   </Button>
                   <Card.Body>
-                    <Card.Title className="text-center">
+                    <Card.Title  style={{color:'#6B7C93'}} className="text-center">
                       {item.title}
                     </Card.Title>
-                    <Card.Text className="text-center">{item.price}</Card.Text>
+                    <Card.Text style={{color:'#6B7C93'}} className="text-center">{item.price}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
