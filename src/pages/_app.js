@@ -8,10 +8,12 @@ import "../styles/globals.css";
 import Header from "../components/header/header.component";
 import CategoryProvider from "../context/category/provider";
 import CardProvider from "../context/card/provider";
+import GiftHeader from "../components/gift/gift-header.component";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <GiftHeader />
       <CardProvider>
         <CategoryProvider>
           <Header />
