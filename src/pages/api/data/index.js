@@ -3,102 +3,102 @@ const stickers = [
     image:
       "https://geektori.ir/uploads/image/rootimage/6378/78fda137af9994844d4e8e36e70df03b.png?w=300&h=300&q=90",
     title: "your opinions belong here",
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6377/4fded1464736e77865df232cbcb4cd19.png?w=300&h=300&q=90",
     title: "yolo",
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6377/4fded1464736e77865df232cbcb4cd19.png?w=300&h=300&q=90",
     title: "works on my machine border",
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6376/d85176e5927acd6f5840fe8b7cf09592.png?w=300&h=300&q=90",
     title: "windows cat",
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6375/505a0826dc0756de8eb7bd4c4e0c34cc.png?w=300&h=300&q=90",
     title: "will code for pizza",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6374/e8dfc2346b36b3d4ec54973c2fa66459.png?w=300&h=300&q=90",
     title: "will code for beer",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6373/2205f3bad57847fc78e08c9ed0208bf4.png?w=300&h=300&q=90",
     title: "wifi connection",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6372/e1fb5f6e14b64292baafc247fb3743cd.png?w=300&h=300&q=90",
     title: "when i see my code without errors",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6371/39e7794a900a9679e7bf650187afb52d.png?w=300&h=300&q=90",
     title: "vue js emblem",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6294/2b68e08fecccb616689cf23b42041da1.png?w=300&h=300&q=90",
     title: "unicode",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6293/8ab3b19e134f01fbaf94b8e15f3df090.png?w=300&h=300&q=90",
     title: "unexpected error JSSTIC15610",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6292/f2ca0dc2c2a81319a8e478c27e08b99e.png?w=300&h=300&q=90",
     title: "ui ux b",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6291/6c7694d84718c8599cc568380985bded.png?w=300&h=300&q=90",
     title: "true that",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6290/06848439ead01cad052baa3cfa0f72bd.png?w=300&h=300&q=90",
     title: "trespassers will be put to work b",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6289/f718209daa1bc2bf1a18907e4f35e290.png?w=300&h=300&q=90",
     title: "torrents",
 
-    price: "2550  تومان",
+    price: "۲٫۵۵۵  تومان",
   },
 ];
 
