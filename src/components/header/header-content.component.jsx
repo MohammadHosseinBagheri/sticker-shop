@@ -7,7 +7,7 @@ const HeaderContent = () => {
         <MyLink href="/custom" title="طرح دلخواه" />
         <MyLink href="/fantasy" title="استیکر های فانتزی" />
         <MyLink href="/" title="استیکر" />
-        <div> logo </div>
+        <img width={100} height={100} src="/img/logo.png" /> 
       </Col>
     </Row>
   );
