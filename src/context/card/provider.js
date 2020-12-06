@@ -4,7 +4,7 @@ import { reducer } from "../reducer/cardReducer";
 export const CardContextState = createContext();
 export const CardContextDispatch = createContext();
 
-let INITIAL_STATE = {};
+let INITIAL_STATE = [];
 
 const CardProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
@@ -25,5 +25,13 @@ const useCardState = () => {
 const useCardDispatch = () => {
   return useContext(CardContextDispatch);
 };
+const useQuantity = () => {
+  const state = useCardState();
+  const quantity = state?.reduce(
+    (total, accumulator) => total + accumulator.quantity,
+    0
+  );
+  return quantity;
+};
 
-export { useCardDispatch, useCardState };
+export { useCardDispatch, useCardState, useQuantity };
