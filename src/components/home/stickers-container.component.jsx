@@ -11,10 +11,10 @@ const StickerContainer = () => {
   const dispatch = useCardDispatch();
   const state = useCardState();
   useEffect(() => {
-    console.log(state);
+    // console.log(state);
   }, [state]);
-  console.log(stickers);
-  console.log("render","color:'red")
+  // console.log(stickers);
+  // console.log("render","color:'red")
   return (
     <>
       <h2 className="text-center mt-5" style={{ color: "#32325d" }}>
