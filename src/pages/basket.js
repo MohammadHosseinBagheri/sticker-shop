@@ -2,17 +2,24 @@ import { useMemo } from "react";
 import { Button, Container } from "react-bootstrap";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useTable } from "react-table";
-import { useCardDispatch, useCardState } from "../context/card/provider";
+import {
+  useCardDispatch,
+  useCardState,
+  usePrice,
+} from "../context/card/provider";
 
 import * as types from "../constant/types";
 import {
   removeFromCardAction,
   deleteCardAction,
+  addToCartAction,
 } from "../context/action/cardAction";
 
 const Basket = () => {
   const cardState = useCardState();
   const dispatch = useCardDispatch();
+  const price = usePrice();
+  console.log(price)
   const columns = useMemo(
     () => [
       {
@@ -51,7 +58,7 @@ const Basket = () => {
                   className="d-flex justify-content-center "
                 >
                   <Button className="bg-success border-success mr-3">
-                    <FaPlus />
+                    <FaPlus onClick={() => dispatch(addToCartAction(item))} />
                   </Button>
                   <Button
                     onClick={() => dispatch(deleteCardAction(item))}
@@ -72,6 +79,7 @@ const Basket = () => {
           ))}
         </tbody>
       </table>
+      <h2>Price:{price}$</h2>
     </Container>
   );
 };
