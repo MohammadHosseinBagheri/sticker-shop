@@ -14,8 +14,8 @@ import Footer from "../components/footer/footer.component";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <GiftHeader />
       <CardProvider>
+        <GiftHeader />
         <CategoryProvider>
           <Header />
           <Component {...pageProps} />
