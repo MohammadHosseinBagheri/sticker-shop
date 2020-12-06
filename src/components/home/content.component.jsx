@@ -16,7 +16,7 @@ import styles from "./home.module.scss";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectFade,Autoplay]);
 const HomeContent = () => {
   const category = useCategoryState();
-  console.log("content render", "color:red;");
+  // console.log("content render", "color:red;");
   return (
     <>
       <Row>
