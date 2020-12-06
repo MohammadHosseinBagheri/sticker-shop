@@ -4,24 +4,28 @@ const stickers = [
       "https://geektori.ir/uploads/image/rootimage/6378/78fda137af9994844d4e8e36e70df03b.png?w=300&h=300&q=90",
     title: "your opinions belong here",
     price: "۲٫۵۵۵  تومان",
+    id: 0,
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6377/4fded1464736e77865df232cbcb4cd19.png?w=300&h=300&q=90",
     title: "yolo",
     price: "۲٫۵۵۵  تومان",
+    id: 1,
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6377/4fded1464736e77865df232cbcb4cd19.png?w=300&h=300&q=90",
     title: "works on my machine border",
     price: "۲٫۵۵۵  تومان",
+    id: 2,
   },
   {
     image:
       "https://geektori.ir/uploads/image/rootimage/6376/d85176e5927acd6f5840fe8b7cf09592.png?w=300&h=300&q=90",
     title: "windows cat",
     price: "۲٫۵۵۵  تومان",
+    id: 3,
   },
   {
     image:
@@ -29,6 +33,7 @@ const stickers = [
     title: "will code for pizza",
 
     price: "۲٫۵۵۵  تومان",
+    id: 4,
   },
   {
     image:
@@ -36,6 +41,7 @@ const stickers = [
     title: "will code for beer",
 
     price: "۲٫۵۵۵  تومان",
+    id: 5,
   },
   {
     image:
@@ -43,6 +49,7 @@ const stickers = [
     title: "wifi connection",
 
     price: "۲٫۵۵۵  تومان",
+    id: 6,
   },
   {
     image:
@@ -50,6 +57,7 @@ const stickers = [
     title: "when i see my code without errors",
 
     price: "۲٫۵۵۵  تومان",
+    id: 7,
   },
   {
     image:
@@ -57,6 +65,7 @@ const stickers = [
     title: "vue js emblem",
 
     price: "۲٫۵۵۵  تومان",
+    id: 8,
   },
   {
     image:
@@ -64,6 +73,7 @@ const stickers = [
     title: "unicode",
 
     price: "۲٫۵۵۵  تومان",
+    id: 9,
   },
   {
     image:
@@ -71,6 +81,7 @@ const stickers = [
     title: "unexpected error JSSTIC15610",
 
     price: "۲٫۵۵۵  تومان",
+    id: 10,
   },
   {
     image:
@@ -78,6 +89,7 @@ const stickers = [
     title: "ui ux b",
 
     price: "۲٫۵۵۵  تومان",
+    id: 11,
   },
   {
     image:
@@ -85,6 +97,7 @@ const stickers = [
     title: "true that",
 
     price: "۲٫۵۵۵  تومان",
+    id: 12,
   },
   {
     image:
@@ -92,6 +105,7 @@ const stickers = [
     title: "trespassers will be put to work b",
 
     price: "۲٫۵۵۵  تومان",
+    id: 13,
   },
   {
     image:
@@ -99,12 +113,13 @@ const stickers = [
     title: "torrents",
 
     price: "۲٫۵۵۵  تومان",
+    id: 14,
   },
 ];
 
-export default ((req, res) => {
-  res.json(stickers)
-});
+export default (req, res) => {
+  res.json(stickers);
+};
 
 // "https://geektori.ir/uploads/image/rootimage/7216/6f4922f45568161a8cdf4ad2299f6d23.jpg?w=300&h=300&q=90",
 // "https://geektori.ir/uploads/image/rootimage/7215/70efdf2ec9b086079795c442636b55fb.jpg?w=300&h=300&q=90",
