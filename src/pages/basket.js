@@ -19,7 +19,6 @@ const Basket = () => {
   const cardState = useCardState();
   const dispatch = useCardDispatch();
   const price = usePrice();
-  console.log(price)
   const columns = useMemo(
     () => [
       {
@@ -51,22 +50,38 @@ const Basket = () => {
           {cardState?.map((item) => (
             <>
               <tr className="d-flex flex-row justify-content-around text-center m-3 ">
-                <td style={{ width: "100%" }}>{item.title}</td>
-                <td style={{ width: "100%" }}>{item.quantity}</td>
+                <td style={{ width: "100%" }}>
+                  <img src={item.image} width="50%" height="50%" />
+                </td>
+                <td
+                  style={{
+                    width: "100%",
+                    alignItems: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  {item.quantity}
+                </td>
                 <td
                   style={{ width: "100%" }}
-                  className="d-flex justify-content-center "
+                  className="d-flex justify-content-center align-items-center"
                 >
-                  <Button className="bg-success border-success mr-3">
+                  <Button
+                    style={{ width: 50, height: 50 }}
+                    className="bg-success border-success mr-3"
+                  >
                     <FaPlus onClick={() => dispatch(addToCartAction(item))} />
                   </Button>
                   <Button
+                    style={{ width: 50, height: 50 }}
                     onClick={() => dispatch(deleteCardAction(item))}
                     className="bg-warning border-warning mr-3"
                   >
                     <FaTrash />
                   </Button>
                   <Button
+                    style={{ width: 50, height: 50 }}
                     className="bg-danger border-danger mr-3"
                     onClick={() => dispatch(removeFromCardAction(item))}
                   >
