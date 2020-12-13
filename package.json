@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "formik": "^2.2.6",
     "next": "10.0.1",
     "perm": "^1.0.0",
     "react": "17.0.1",
@@ -22,6 +23,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "sass": "^1.29.0",
-    "swiper": "^6.3.5"
+    "swiper": "^6.3.5",
+    "yup": "^0.32.8"
   }
 }
