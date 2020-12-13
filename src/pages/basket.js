@@ -1,100 +1,42 @@
-import { useMemo } from "react";
-import { Button, Container } from "react-bootstrap";
-import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
-import { useTable } from "react-table";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { Container } from "react-bootstrap";
 import {
   useCardDispatch,
   useCardState,
   usePrice,
 } from "../context/card/provider";
-
-import * as types from "../constant/types";
-import {
-  removeFromCardAction,
-  deleteCardAction,
-  addToCartAction,
-} from "../context/action/cardAction";
+import BasketTable from "../components/basket-table/BasketTable.component";
+import Customer from "./customer";
+import { FaArrowRight } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Basket = () => {
   const cardState = useCardState();
   const dispatch = useCardDispatch();
   const price = usePrice();
-  const columns = useMemo(
-    () => [
-      {
-        Header: "نام محصول",
-        accessor: "name",
-      },
-      {
-        Header: "تعداد محصول",
-        accessor: "quantity",
-      },
-      {
-        Header: "عملبات",
-        accessor: "action",
-      },
-    ],
-    []
-  );
+  const router = useRouter();
+  useEffect(() => {
+    if (cardState.length === 0) {
+      router.replace("/");
+    }
+  }, [cardState]);
+
   return (
     <Container>
-      <table style={{ width: "100%" }} className="mb-5">
-        <thead className="d-flex flex-row justify-content-around text-center">
-          {columns.map((item) => (
-            <tr>
-              <th>{item.Header}</th>
-            </tr>
-          ))}
-        </thead>
-        <tbody style={{ width: "100%" }}>
-          {cardState?.map((item) => (
-            <>
-              <tr className="d-flex flex-row justify-content-around text-center m-3 ">
-                <td style={{ width: "100%" }}>
-                  <img src={item.image} width="50%" height="50%" />
-                </td>
-                <td
-                  style={{
-                    width: "100%",
-                    alignItems: "center",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  {item.quantity}
-                </td>
-                <td
-                  style={{ width: "100%" }}
-                  className="d-flex justify-content-center align-items-center"
-                >
-                  <Button
-                    style={{ width: 50, height: 50 }}
-                    className="bg-success border-success mr-3"
-                  >
-                    <FaPlus onClick={() => dispatch(addToCartAction(item))} />
-                  </Button>
-                  <Button
-                    style={{ width: 50, height: 50 }}
-                    onClick={() => dispatch(deleteCardAction(item))}
-                    className="bg-warning border-warning mr-3"
-                  >
-                    <FaTrash />
-                  </Button>
-                  <Button
-                    style={{ width: 50, height: 50 }}
-                    className="bg-danger border-danger mr-3"
-                    onClick={() => dispatch(removeFromCardAction(item))}
-                  >
-                    <FaMinus />
-                  </Button>
-                </td>
-              </tr>
-              <hr />
-            </>
-          ))}
-        </tbody>
-      </table>
-      <h2>Price:{price}$</h2>
+      <BasketTable />
+      <div className="d-flex flex-row justify-content-between">
+        <h2 style={{ direction: "rtl" }}>قیمت کل:{price}$</h2>
+        <Link href="/customer">
+          <a
+            style={{ background: "#00E676" }}
+            className="align-self-center p-2 rounded-sm "
+          >
+            ادامه مراحل و پرداخت
+            <FaArrowRight />
+          </a>
+        </Link>
+      </div>
     </Container>
   );
 };
