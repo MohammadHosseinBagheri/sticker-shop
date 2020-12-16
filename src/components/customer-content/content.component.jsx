@@ -1,18 +1,25 @@
+import axios from "axios";
 import { useFormik } from "formik";
-import { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Col, Row, Button } from "react-bootstrap";
 import {
   FaAddressBook,
-    FaGift,
+  FaCity,
+  FaGift,
   FaMailBulk,
   FaPhone,
   FaUser,
   FaVoicemail,
 } from "react-icons/fa";
-
+import * as Yup from "yup";
+import BasketSide from "../basket-side/basket-side.component";
+import FormContaner from "../form/form-container.component";
+import InputContainer from "../form/input-container.component";
 const Content = () => {
   const [gift, setGift] = useState("");
   const [isGift, setIsGift] = useState(false);
+  const [state, setState] = useState("");
+  const [citiesList, setCitiesList] = useState("");
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -20,120 +27,57 @@ const Content = () => {
       name: "",
       lastName: "",
       phone: "",
+      state: "اردبیل",
+      city: "",
     },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("فرمت ایمیل صحیح نیست")
+        .required(" ایمیل را وارد کنید"),
+      address: Yup.string().required("آدرس را وارد کنید"),
+      name: Yup.string().required("نام گیرنده را وارد کنید"),
+      lastName: Yup.string().required("نام خانوادگی گیرند را وارد کنید"),
+      phone: Yup.string()
+        .length(11, "شماره موبایل 11 رقم است")
+        .required("فیلد تلفن نمیتواند خالی بماند"),
+      state: Yup.string().required("استان را انتخاب کنید"),
+      city: Yup.string().required("شهرا را انتخاب کنید"),
+    }),
+    onSubmit: (values) => console.log(values),
   });
 
   const handleCheckbox = (event) => {
     setIsGift((prevState) => !prevState);
   };
-
+  useEffect(() => {
+    const getStates = async () => {
+      const response = await axios.get(
+        "http://localhost:3000/api/states/getstates"
+      );
+      const { data } = await response;
+      setState(data.data);
+    };
+    const postStates = async () => {
+      const response = await axios.post(
+        "http://localhost:3000/api/states/poststate",
+        { state: formik.values.state }
+      );
+      setCitiesList(response.data);
+    };
+    getStates();
+    postStates();
+  }, [formik.values.state]);
   return (
-    <form>
-      <Row className="d-flex justify-content-center">
-        <Col
-          sm={12}
-          lg={5}
-          md={12}
-          xl={5}
-          className="form-group d-flex flex-row align-items-center "
-        >
-          <FaMailBulk />
-          <input
-            className="form-control ml-1"
-            placeholder="ایمیل"
-            name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-        </Col>
-        <Col
-          sm={12}
-          lg={5}
-          md={12}
-          xl={5}
-          className="form-group d-flex flex-row align-items-center "
-        >
-          <FaUser />
-          <input
-            className="form-control"
-            placeholder="نام"
-            name="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-        </Col>
-        <Col
-          sm={12}
-          lg={5}
-          md={12}
-          xl={5}
-          className="form-group d-flex flex-row align-items-center "
-        >
-          <FaUser />
-          <input
-            className="form-control"
-            placeholder="نام خانوادگی"
-            name="lastName"
-            value={formik.values.lastName}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-        </Col>
-        <Col
-          sm={12}
-          lg={5}
-          md={12}
-          xl={5}
-          className="form-group d-flex flex-row align-items-center "
-        >
-          <FaPhone />
-          <input
-            className="form-control"
-            placeholder="تلفن"
-            name="phone"
-            value={formik.values.phone}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-        </Col>
-        <Col
-          sm={12}
-          lg={12}
-          md={12}
-          xl={12}
-          className="form-group d-flex flex-row align-items-center "
-        >
-          <FaAddressBook />
-          <input
-            className="form-control"
-            placeholder="آدرس"
-            name="address"
-            value={formik.values.address}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-        </Col>
-      </Row>
-      <div className="d-flex flex-row justify-content-end align-items-center ">
-        {isGift && (
-          <div className="d-flex flex-row align-items-center m-2" >
-            <input
-              style={{
-                width: 200,
-                margin:2
-              }}
-              className="form-control "
-              placeholder="کد تخفیف را وارد کنید"
-            />
-            <FaGift />
-          </div>
-        )}
-        <h6>کد تخفیف دارید ؟ </h6>
-        <input type="checkbox" checked={isGift} onClick={handleCheckbox} />
-      </div>
-    </form>
+    <Row>
+      <FormContaner
+        handleCheckbox={handleCheckbox}
+        formik={formik}
+        state={state}
+        citiesList={citiesList}
+        isGift={isGift}
+      />
+      <BasketSide />
+    </Row>
   );
 };
 
