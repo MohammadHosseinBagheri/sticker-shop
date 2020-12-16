@@ -3,7 +3,7 @@ import Content from "../components/customer-content/content.component";
 
 const Customer = () => {
   return (
-    <Container>
+    <Container >
       <Content />
     </Container>
   );
