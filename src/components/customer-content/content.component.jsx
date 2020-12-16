@@ -52,14 +52,14 @@ const Content = () => {
   useEffect(() => {
     const getStates = async () => {
       const response = await axios.get(
-        "http://localhost:3000/api/states/getstates"
+        "/api/states/getstates"
       );
       const { data } = await response;
       setState(data.data);
     };
     const postStates = async () => {
       const response = await axios.post(
-        "http://localhost:3000/api/states/poststate",
+        "/api/states/poststate",
         { state: formik.values.state }
       );
       setCitiesList(response.data);
