@@ -4,22 +4,25 @@ import { useCategoryAction } from "../context/category/provider";
 import { useGetAllCategory } from "../hooks";
 
 const Home = (props) => {
-  const setData = useCategoryAction();
-  setData(props.data);
+  // const setData = useCategoryAction();
+  // setData(props.data);
   return (
     <Container>
-      <HomeContent />
+    <div>
+      heeloo
+    </div>
+      {/* <HomeContent /> */}
     </Container>
   );
 };
 
 export default Home;
 
-export async function getServerSideProps() {
-  const data = await useGetAllCategory();
-  return {
-    props: {
-      data: data,
-    },
-  };
-}
+// export async function getServerSideProps() {
+//   const data = await useGetAllCategory();
+//   return {
+//     props: {
+//       data: data,
+//     },
+//   };
+// }
