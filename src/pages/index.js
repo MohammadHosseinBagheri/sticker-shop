@@ -5,9 +5,7 @@ import { useGetAllCategory } from "../hooks";
 
 const Home = (props) => {
   const setData = useCategoryAction();
-  useEffect(() => {
-    setData(props.data);
-  }, []);
+  setData(props.data);
   return (
     <Container>
       <HomeContent />
