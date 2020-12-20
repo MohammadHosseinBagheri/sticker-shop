@@ -117,9 +117,11 @@ const stickers = [
   },
 ];
 
-export default (req, res) => {
-  res.json(stickers);
-};
+export default stickers;
+
+// export default (req, res) => {
+//   res.json(stickers);
+// };
 
 // "https://geektori.ir/uploads/image/rootimage/7216/6f4922f45568161a8cdf4ad2299f6d23.jpg?w=300&h=300&q=90",
 // "https://geektori.ir/uploads/image/rootimage/7215/70efdf2ec9b086079795c442636b55fb.jpg?w=300&h=300&q=90",
