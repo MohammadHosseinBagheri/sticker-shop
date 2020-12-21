@@ -10,6 +10,7 @@ import BasketTable from "../components/basket-table/BasketTable.component";
 import Customer from "./customer";
 import { FaArrowRight } from "react-icons/fa";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const Basket = () => {
   const cardState = useCardState();
@@ -23,6 +24,10 @@ const Basket = () => {
   }, [cardState]);
 
   return (
+    <>
+    <Head >
+      <title>سبد خرید</title>
+    </Head>
     <Container>
       <BasketTable />
       <div className="d-flex flex-row justify-content-between">
@@ -38,6 +43,7 @@ const Basket = () => {
         </Link>
       </div>
     </Container>
+    </>
   );
 };
 
