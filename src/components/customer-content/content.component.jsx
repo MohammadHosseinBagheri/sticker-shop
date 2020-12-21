@@ -17,8 +17,6 @@ import FormContaner from "../form/form-container.component";
 import InputContainer from "../form/input-container.component";
 import citiesData from "../../pages/api/data/cities";
 const Content = () => {
-  const [gift, setGift] = useState("");
-  const [isGift, setIsGift] = useState(false);
   const [state, setState] = useState("");
   const [citiesList, setCitiesList] = useState("");
   const formik = useFormik({
@@ -47,9 +45,7 @@ const Content = () => {
     onSubmit: (values) => console.log(values),
   });
 
-  const handleCheckbox = (event) => {
-    setIsGift((prevState) => !prevState);
-  };
+
   useEffect(() => {
     const getStates = async () => {
       // const response = await axios.get(
@@ -79,11 +75,9 @@ const Content = () => {
   return (
     <Row>
       <FormContaner
-        handleCheckbox={handleCheckbox}
         formik={formik}
         state={state}
         citiesList={citiesList}
-        isGift={isGift}
       />
       <BasketSide />
     </Row>
