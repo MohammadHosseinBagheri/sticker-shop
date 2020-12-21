@@ -4,7 +4,6 @@ import styles from "./basket-side.module.scss";
 import BasketSideItem from "./basket-side-item.component";
 const BasketSide = () => {
   const cardItem = useCardState();
-  console.log(cardItem);
   return (
     <Col
       className={`d-none d-md-flex justify-content-end flex-row ${styles.basket_side_container} `}
