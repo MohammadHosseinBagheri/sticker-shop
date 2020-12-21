@@ -10,8 +10,8 @@ import {
 } from "../../context/action/cardAction";
 
 const TableBody = () => {
-    const dispatch = useCardDispatch();
-    const cardState = useCardState();
+  const dispatch = useCardDispatch();
+  const cardState = useCardState();
   return (
     <tbody style={{ width: "100%" }}>
       {cardState?.map((item) => (
@@ -34,27 +34,39 @@ const TableBody = () => {
               style={{ width: "100%" }}
               className="d-flex justify-content-center align-items-center"
             >
-              <Button
+              <div
                 onClick={() => dispatch(addToCartAction(item))}
-                style={{ width: 50, height: 50 }}
-                className="bg-success border-success mr-3"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className="btn mr-3 rounded"
               >
                 <FaPlus />
-              </Button>
-              <Button
-                style={{ width: 50, height: 50 }}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
                 onClick={() => dispatch(deleteCardAction(item))}
-                className="bg-warning border-warning mr-3"
+                className="btn mr-3 rounded"
               >
                 <FaTrash />
-              </Button>
-              <Button
-                style={{ width: 50, height: 50 }}
-                className="bg-danger border-danger mr-3"
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                className="btn mr-3 rounded"
                 onClick={() => dispatch(removeFromCardAction(item))}
               >
                 <FaMinus />
-              </Button>
+              </div>
             </td>
           </tr>
           <hr />
