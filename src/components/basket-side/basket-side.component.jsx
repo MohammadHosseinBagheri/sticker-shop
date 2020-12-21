@@ -16,6 +16,7 @@ const BasketSide = () => {
           <BasketSideItem key={index} item={item} />
         ))}
       </Col>
+      <hr />
     </Col>
   );
 };
