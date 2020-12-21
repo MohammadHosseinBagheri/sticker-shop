@@ -9,11 +9,11 @@ import {
   FaVoicemail,
 } from "react-icons/fa";
 import InputContainer from "../form/input-container.component";
-import styles from './form.module.scss'
+import styles from "./form.module.scss";
 const FormContaner = (props) => {
-  const { handleCheckbox, formik, state, citiesList, isGift } = props;
+  const { formik, state, citiesList } = props;
   return (
-    <Col lg={7} md={7} sm={12} className={`p-5 ${styles.form_container}`}>
+    <Col lg={7} md={6} sm={12} className={`p-5 ${styles.form_container}`}>
       <form style={{ direction: "rtl" }} onSubmit={formik.handleSubmit}>
         <Row className="d-flex ">
           <InputContainer
@@ -65,52 +65,43 @@ const FormContaner = (props) => {
             className="form-group d-flex justify-content-start flex-row align-items-center "
           >
             <FaCity />
-            <select
-              style={{ width: 200 }}
-              name="state"
-              onChange={formik.handleChange}
-              value={formik.values.state}
-              className="form-control m-2"
-            >
-              {state
-                ? state.map((item) => (
-                    <option key={item.name}>{item.name}</option>
-                  ))
-                : null}
-            </select>
-            <select
-              style={{ width: 200 }}
-              className="form-control m-2"
-              name="city"
-              onChange={formik.handleChange}
-              value={formik.values.city}
-            >
-              {citiesList
-                ? citiesList.map((item) => (
-                    <option key={item.name}>{item.name}</option>
-                  ))
-                : null}
-            </select>
+            <Col sm={5}>
+              <select
+                name="state"
+                onChange={formik.handleChange}
+                value={formik.values.state}
+                className="form-control m-2"
+              >
+                {state
+                  ? state.map((item) => (
+                      <option key={item.name}>{item.name}</option>
+                    ))
+                  : null}
+              </select>
+            </Col>
+            <Col sm={5}>
+              <select
+                className="form-control m-1"
+                name="city"
+                onChange={formik.handleChange}
+                value={formik.values.city}
+              >
+                {citiesList
+                  ? citiesList.map((item) => (
+                      <option key={item.name}>{item.name}</option>
+                    ))
+                  : null}
+              </select>
+            </Col>
           </Col>
         </Row>
-        <div className="d-flex flex-row justify-content-start align-items-center ">
-          <input type="checkbox" checked={isGift} onClick={handleCheckbox} />
-          <h6>کد تخفیف دارید ؟ </h6>
-          {isGift && (
-            <div className="d-flex flex-row align-items-center m-2">
-              <input
-                style={{
-                  width: 200,
-                  margin: 2,
-                }}
-                className="form-control "
-                placeholder="کد تخفیف را وارد کنید"
-              />
-              <FaGift />
-            </div>
-          )}
-        </div>
-        <button type="submit">ارسال</button>
+
+        <button
+          className={`btn ${styles.submit_button}`}
+          type="submit"
+        >
+          ارسال
+        </button>
       </form>
     </Col>
   );
