@@ -1,0 +1,22 @@
+.basket_side_container {
+  max-height: 400px;
+  overflow-y: scroll;
+  .basket_side_item_container {
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    .basket_side_item_quantity {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      background: #6b7c93;
+      color: white;
+      border-radius: 100px;
+      align-self: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
