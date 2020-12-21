@@ -1,11 +1,17 @@
+import Head from "next/head";
 import { Container } from "react-bootstrap";
 import Content from "../components/customer-content/content.component";
 
 const Customer = () => {
   return (
-    <Container >
-      <Content />
-    </Container>
+    <>
+      <Head>
+        <title>اطلاعات مشتریان</title>
+      </Head>
+      <Container>
+        <Content />
+      </Container>
+    </>
   );
 };
 
