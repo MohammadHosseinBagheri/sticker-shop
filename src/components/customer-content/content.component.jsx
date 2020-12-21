@@ -15,6 +15,7 @@ import * as Yup from "yup";
 import BasketSide from "../basket-side/basket-side.component";
 import FormContaner from "../form/form-container.component";
 import InputContainer from "../form/input-container.component";
+import citiesData from "../../pages/api/data/cities";
 const Content = () => {
   const [gift, setGift] = useState("");
   const [isGift, setIsGift] = useState(false);
@@ -51,21 +52,29 @@ const Content = () => {
   };
   useEffect(() => {
     const getStates = async () => {
-      const response = await axios.get(
-        "http://localhost:3000/api/states/getstates"
-      );
-      const { data } = await response;
-      setState(data.data);
+      // const response = await axios.get(
+      //   "http://localhost:3000/api/states/getstates"
+      // );
+      // const { data } = await response;
+      // setState(data.data);
+      setState(citiesData);
     };
     const postStates = async () => {
-      const response = await axios.post(
-        "http://localhost:3000/api/states/poststate",
-        { state: formik.values.state }
+      // const response = await axios.post(
+      //   "http://localhost:3000/api/states/poststate",
+      //   { state: formik.values.state }
+      // );
+      // setCitiesList(response.data);
+      const { cities } = await citiesData.find(
+        (item) => item.name === formik.values.state
       );
-      setCitiesList(response.data);
+      setCitiesList(cities);
     };
     getStates();
     postStates();
+    () => {
+      return null;
+    };
   }, [formik.values.state]);
   return (
     <Row>
