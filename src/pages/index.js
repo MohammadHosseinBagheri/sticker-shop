@@ -12,6 +12,10 @@ const Home = (props) => {
     <>
       <Head>
         <title>استیکر ملیا</title>
+        <meta property="og:title" content="استیکر ملیا" />
+        <meta property="og:type" content="فروشگاه آنلاین استیکر" />
+        <meta property="og:url" content="فروشگاه آنلاین استیکر" />
+        <meta property="og:image" content="فروشگاه آنلاین استیکر" />
       </Head>
       <Container>
         <HomeContent />
