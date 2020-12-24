@@ -1,8 +1,11 @@
 import { Col, Card, Button } from "react-bootstrap";
 import { FaShoppingBasket } from "react-icons/fa";
+import { addToCartAction } from "../../context/action/cardAction";
+import { useCardDispatch } from "../../context/card/provider";
 
 import styles from "./home.module.scss";
 const MySwiper = ({ item, index }) => {
+  const dispatch = useCardDispatch();
   return (
     <Col
       style={{
@@ -12,7 +15,10 @@ const MySwiper = ({ item, index }) => {
       }}
     >
       <Card className={styles.card_container}>
-        <div className={styles.add_to_card}>
+        <div
+          onClick={()=>dispatch(addToCartAction(item))}
+          className={`btn  ${styles.add_to_card}`}
+        >
           <FaShoppingBasket color="white" />
         </div>
         <Card.Img width={200} height={200} src={item.image} />
