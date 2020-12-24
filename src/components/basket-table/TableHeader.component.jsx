@@ -21,8 +21,8 @@ const TableHeader = () => {
   return (
     <div>
       <thead className="d-flex flex-row justify-content-around text-center">
-        {columns.map((item) => (
-          <tr>
+        {columns.map((item,index) => (
+          <tr key={index} >
             <th>{item.Header}</th>
           </tr>
         ))}
