@@ -44,7 +44,7 @@ const HomeContent = () => {
             ? category
                 .filter((_, i) => i < 6)
                 .map((item, index) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={index} >
                     <MySwiper item={item} index={index} />
                   </SwiperSlide>
                 ))
