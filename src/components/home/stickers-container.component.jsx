@@ -23,7 +23,7 @@ const StickerContainer = () => {
       <Row>
         {stickers
           ? stickers.map((item, index) => (
-              <Col className={styles.card_collection_container} lg={4} md={6}>
+              <Col key={index} className={styles.card_collection_container} lg={4} md={6}>
                 <Card>
                   <Card.Img
                     className={styles.card_collection_image}
