@@ -18,9 +18,12 @@
     opacity: 0;
     background-color: #00e676 !important;
     border-color: #00e676 !important;
-    border-radius: 7px;
     height: 30px;
     width: 50px;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex;
   }
   .card_body_container {
     display: flex;
