@@ -17,8 +17,8 @@ const TableBody = () => {
       {cardState?.map((item) => (
         <>
           <tr className="d-flex flex-row justify-content-around text-center m-3 ">
-            <td style={{ width: "100%" }}>
-              <img src={item.image} width="50%" height="50%" />
+            <td style={{ width: "100%", maxHeight:"100%" }}>
+              <img className="rounded" src={item.image} width="50%" style={{maxHeight:'50%'}} />
             </td>
             <td
               style={{
